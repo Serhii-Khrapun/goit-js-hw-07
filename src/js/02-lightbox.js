@@ -20,9 +20,5 @@ const galleryContainer = document.querySelector(".gallery");
 galleryContainer.addEventListener("click", onGalleryContainerClick);
 function onGalleryContainerClick (event) {
     event.preventDefault();
- 
-    const url = event.target.dataset.source;
-    var lightbox = new SimpleLightbox('.gallery a');
-    var lightbox = $('.gallery a').simpleLightbox();
  }
- 
+ const lightbox = new SimpleLightbox('.gallery a', { captionsData:'alt', captionDelay:250});
