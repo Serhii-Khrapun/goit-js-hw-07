@@ -25,6 +25,10 @@ galleryContainer.addEventListener("click", onGalleryContainerClick);
 
 function onGalleryContainerClick(event) {
   event.preventDefault();
+  if(event.target.tagName !== "IMG"){
+    return;
+  }
+ 
   const url = event.target.dataset.source;
 
   const modal = basicLightbox

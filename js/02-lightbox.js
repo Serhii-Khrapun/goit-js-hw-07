@@ -14,11 +14,15 @@ const createImg = galleryItems
   .join(" ");
 
 galleryElement.insertAdjacentHTML("afterbegin", createImg);
-
+const lightbox = new SimpleLightbox('.gallery a', { captionsData:'alt', captionDelay:250});
 
 const galleryContainer = document.querySelector(".gallery");
 galleryContainer.addEventListener("click", onGalleryContainerClick);
 function onGalleryContainerClick (event) {
     event.preventDefault();
+    if(event.target.tagName !== "IG"){
+      return;
+    }
+    console.log(event.target)
+    
  }
- const lightbox = new SimpleLightbox('.gallery a', { captionsData:'alt', captionDelay:250});
